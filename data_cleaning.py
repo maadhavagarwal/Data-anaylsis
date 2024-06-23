@@ -9,10 +9,16 @@ try:
         sl.write(df)
         sl.write(df.isna().sum())
         sl.write(df.duplicated().sum())
-#saving file
-        df.to_csv("cleaned_data.csv",index=False)
-        sl.write("Data is cleaned and saved as cleaned_data.csv")
-        
 except ex.inp  as e:
         print(e)
         sl.write("Data is not loaded")
+
+#saving file
+def clean_data():
+        try:
+                df.to_csv("cleaned_data.csv",index=False)
+                sl.write("Data is cleaned and saved as cleaned_data.csv")
+        except Exception as e:
+                print(e)
+                sl.write("Data is not saved")
+                
